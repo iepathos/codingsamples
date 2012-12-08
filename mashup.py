@@ -12,11 +12,6 @@
 #
 # Script written by: Glen Baker - iepathos@gmail.com
 
-# Coding Challenge from Saffron Digital
-# Get all popular music artists from Yahoo and all of their albums from LastFM.
-# Output artists and their albums in JSON format.
-# Script must execute in less than 30 seconds.
-
 ###############################################
 
 """ THREADING FOR PARALLEL URL REQUESTS """
