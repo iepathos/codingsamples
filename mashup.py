@@ -4,6 +4,8 @@
 # This script gets the Popular Music Artists through Yahoo Search API
 # Then gets all of the albums for each artist through LastFM API
 # Then outputs all of the information in json format.
+# Information is a url to a medium-sized image for each album,
+# each album's name and each album's playcount.
 # The whole script executes in less than 30 seconds.
 # This script was written in response to a coding challenge
 # issued by Saffron Digital for a python web development position.
@@ -78,8 +80,6 @@ def GetLastFMURLS(artists):
     print albumurls
     return albumurls
 
-from collections import defaultdict
-
 def GetAlbums(artists):    
     urls = GetLastFMURLS(artists)
     """ HERE IS THE SCRIPT'S NETWORK CHOKE POINT """
@@ -129,29 +129,20 @@ def GetAlbums(artists):
             
     print json.dumps(artistsalbums, sort_keys=True, indent=4, separators=(',', ': '))
 
-
-# json format like:
+# json will format roughly to:
 # [
 #   {
 #       "artist"
-#       "albums":[
+#       "albums":
 #       {
 #           "image_medium": 'url'
 #           "name": 'album name'
 #           "playcount": 'playcount'
 #       },
-#       List all albums like this and then
-#       ],
-#       
 #   }
 #]
 
-   # This json will dump and format roughly to what saffron asked for
-   # json.dumps(artist_albums, sort_keys=True, indent=4, separators=(',', ': '))
-   # TODO: cleanup json dump after optimization
-
 def main():
-    # all of the popular artists from yahoo
     start = datetime.datetime.now()
     print 'Script start time: ' + str(datetime.datetime.now())
     print 'Getting Popular Artists from Yahoo...'
@@ -160,12 +151,10 @@ def main():
     print 'Retrieved all popular artists at ' + str(datetime.datetime.now())
     print topartists
     print 'Retrieving albums for all artists from LastFM at ' + str(datetime.datetime.now())
-
     GetAlbums(topartists)
     print 'Script began at ' + str(start)
     print 'Script concluded at ' + str(datetime.datetime.now())
     print 'Total script time = ' + str(datetime.datetime.now() - start)
-
 
 if __name__ == "__main__":
     main()
