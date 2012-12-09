@@ -17,7 +17,7 @@
 """ THREADING FOR PARALLEL URL REQUESTS """
 from threading import Thread, enumerate
 from urllib import urlopen
-from time import sleep
+from time import sleep, time
 
 UPDATE_INTERVAL = 0.01
 
@@ -49,7 +49,6 @@ import urllib2
 from BeautifulSoup import BeautifulSoup
 import re
 import json
-import time
 
 # Yahoo Search for popular music Artists
 def GetPopularArtists():
@@ -71,7 +70,7 @@ def GetLastFMURLS(artists):
     albumurls = []
     for artist in artists:
         albumurls.append('http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + artist.encode('utf-8', 'replace').replace(' ', '%20') + '&api_key=' + api_key)
-    print 'Retrieved all album urls at ' + str(time.time())
+    print 'Retrieved all album urls at ' + str(time())
     print albumurls
     return albumurls
 
@@ -138,18 +137,18 @@ def GetAlbums(artists):
 #]
 
 def main():
-    start = time.time()
-    print 'Script start time: ' + str(time.time())
+    start = time()
+    print 'Script start time: ' + str(time())
     print 'Getting Popular Artists from Yahoo...'
     topartists = {}
     topartists = GetPopularArtists()
-    print 'Retrieved all popular artists at ' + str(time.time())
+    print 'Retrieved all popular artists at ' + str(time())
     print topartists
-    print 'Retrieving albums for all artists from LastFM at ' + str(time.time())
+    print 'Retrieving albums for all artists from LastFM at ' + str(time())
     GetAlbums(topartists)
     print 'Script began at ' + str(start)
-    print 'Script concluded at ' + str(time.time())
-    print 'Total script time = ' + str(time.time() - start)
+    print 'Script concluded at ' + str(time())
+    print 'Total script time = ' + str(time() - start)
 
 if __name__ == "__main__":
     main()
