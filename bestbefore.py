@@ -5,7 +5,8 @@
 # by Spotify.  Script reads a file with a single line
 # that is the Year / Month / Day in any possible order and
 # prints the earliest possible expiration date.
-#
+# 
+# 
 # Coding Challenge: http://www.spotify.com/us/jobs/tech/best-before/
 #
 # Script written by Glen Baker - iepathos@gmail.com
@@ -25,25 +26,22 @@ def bestbefore(date_str):
     # for ambiguous dates: sorted ( list of possible year / month / day combinations )
     ambiguous_dates = sorted(itertools.permutations(date_int, 3))
     expiration_date = None
-    
     for date in ambiguous_dates:
         year = date[0] + 2000 if date[0] < 1000 else date[0]
         try:
-            possible_date = datetime.date(year, date[1], date[2]).strftime('%Y-%m-%d')
-
-            if expiration_date is None or possible_date < expiration_date and possible_date >= earliest_date and possible_date <= latest_date:
-                expiration_date = possible_date
+            possible_date = (str(year), str(date[1]), str(date[2]))
+            _possible_date = datetime.date(*[int(x) for x in possible_date])
+            if expiration_date is None or _possible_date < expiration_date:
+                expiration_date = _possible_date
         except ValueError:
             pass
 
-    if expiration_date is None:
+    if expiration_date is None or expiration_date < earliest_date or expiration_date > latest_date:
         print date_str, 'is illegal'
     else:
         print expiration_date
 
 if __name__ == '__main__':
     # input is a line 'day / month / year' with no specific order
-    # Requirements are just to will process a single line from a single file
-    # but I think all of the lines in a file is better, more flexible code.
     for line in sys.stdin:
         bestbefore(line.strip())
