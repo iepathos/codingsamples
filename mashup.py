@@ -48,7 +48,6 @@ def multi_get(uris,timeout=2.0):
 import urllib2
 from BeautifulSoup import BeautifulSoup
 import re
-import datetime
 import json
 
 # Yahoo Search for popular music Artists
@@ -71,7 +70,7 @@ def GetLastFMURLS(artists):
     albumurls = []
     for artist in artists:
         albumurls.append('http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + artist.encode('utf-8', 'replace').replace(' ', '%20') + '&api_key=' + api_key)
-    print 'Retrieved all album urls at ' + str(datetime.datetime.now())
+    print 'Retrieved all album urls at ' + str(time.time())
     print albumurls
     return albumurls
 
@@ -138,18 +137,18 @@ def GetAlbums(artists):
 #]
 
 def main():
-    start = datetime.datetime.now()
-    print 'Script start time: ' + str(datetime.datetime.now())
+    start = time.time()
+    print 'Script start time: ' + str(time.time())
     print 'Getting Popular Artists from Yahoo...'
     topartists = {}
     topartists = GetPopularArtists()
-    print 'Retrieved all popular artists at ' + str(datetime.datetime.now())
+    print 'Retrieved all popular artists at ' + str(time.time())
     print topartists
-    print 'Retrieving albums for all artists from LastFM at ' + str(datetime.datetime.now())
+    print 'Retrieving albums for all artists from LastFM at ' + str(time.time())
     GetAlbums(topartists)
     print 'Script began at ' + str(start)
-    print 'Script concluded at ' + str(datetime.datetime.now())
-    print 'Total script time = ' + str(datetime.datetime.now() - start)
+    print 'Script concluded at ' + str(time.time())
+    print 'Total script time = ' + str(time.time() - start)
 
 if __name__ == "__main__":
     main()
