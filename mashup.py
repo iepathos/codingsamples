@@ -49,6 +49,7 @@ import urllib2
 from BeautifulSoup import BeautifulSoup
 import re
 import json
+import time
 
 # Yahoo Search for popular music Artists
 def GetPopularArtists():
