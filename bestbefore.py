@@ -23,7 +23,7 @@ latest_date = datetime.date(2999, 12, 31)
 def bestbefore(date_str):
     """ This function finds the earliest expiration date between the earliest_date and latest_date given a date string Year / Month / Day in no particular order """
     date_int = map(int, date_str.split('/')) # set items from input string to int
-    # for ambiguous dates: sorted ( list of possible year / month / day combinations )
+    # For ambiguous dates: sorted ( list of possible year / month / day combinations )
     ambiguous_dates = sorted(itertools.permutations(date_int, 3))
     expiration_date = None
     for date in ambiguous_dates:
@@ -42,6 +42,6 @@ def bestbefore(date_str):
         print expiration_date
 
 if __name__ == '__main__':
-    # input is a line 'day / month / year' with no specific order
+    # Input is a line 'day / month / year' with no specific order
     for line in sys.stdin:
         bestbefore(line.strip())

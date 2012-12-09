@@ -1,6 +1,6 @@
 # Coding Samples
 
-##Web Developer, Technical Editor and Information Technology Specialist
+##Web Developer and Technical Editor
 ### Glen Baker - iepathos@gmail.com
 Enthusiasm about open source, open data and open knowledge.  Results-driven self-starter comfortable working independently and in a team environment.  Self-motivated with a passion for learning new and improved techniques.
 
