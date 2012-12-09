@@ -10,7 +10,7 @@
 # This script was written in response to a coding challenge
 # issued by Saffron Digital for a python web development position.
 #
-# Script written by: Glen Baker - iepathos@gmail.com
+# Script written by Glen Baker - iepathos@gmail.com
 
 ###############################################
 
@@ -136,7 +136,7 @@ def GetAlbums(artists):
 #   }
 #]
 
-def main():
+if __name__ == '__main__':
     start = time()
     print 'Script start time: ' + str(time())
     print 'Getting Popular Artists from Yahoo...'
@@ -149,6 +149,3 @@ def main():
     print 'Script began at ' + str(start)
     print 'Script concluded at ' + str(time())
     print 'Total script time = ' + str(time() - start)
-
-if __name__ == "__main__":
-    main()
