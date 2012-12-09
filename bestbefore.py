@@ -40,10 +40,10 @@ def bestbefore(date_str):
     if expiration_date is None:
         print date_str, 'is illegal'
     else:
-        return expiration_date
+        print expiration_date
 
 if __name__ == '__main__':
     # input is a line 'day / month / year' with no specific order
     # Beyond Requirements: will process multiple lines and dates from a single file
     for line in sys.stdin:
-        print bestbefore(line.strip())
+        bestbefore(line.strip())
