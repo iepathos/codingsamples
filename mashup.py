@@ -17,7 +17,7 @@
 """ THREADING FOR PARALLEL URL REQUESTS """
 from threading import Thread, enumerate
 from urllib import urlopen
-import time
+from time import sleep
 
 UPDATE_INTERVAL = 0.01
 
@@ -49,7 +49,7 @@ import urllib2
 from BeautifulSoup import BeautifulSoup
 import re
 import json
-
+import time
 
 # Yahoo Search for popular music Artists
 def GetPopularArtists():
