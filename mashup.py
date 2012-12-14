@@ -61,11 +61,13 @@ def GetPopularArtists():
     topartists = {}
     for artist in soup.findAll('artist'):
         topartists[artist['name']] = ''
+    if topartists == {}:
+        print 'Error 503, Yahoo Search API failed to return the requested information'
     return topartists
 
 def GetLastFMURLS(artists):
     """ Takes list of artists, returns list of LastFM album api urls """
-    # this is my personal lastfm testing api key
+    # my lastfm testing api key
     api_key = '26ab03cd0a155dea863e4249d2329199'
     albumurls = []
     for artist in artists:
