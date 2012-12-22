@@ -15,7 +15,7 @@
 ###############################################
 
 """ THREADING FOR PARALLEL URL REQUESTS """
-from threading import Thread, enumerate
+from threading import Thread
 from urllib import urlopen
 from time import sleep, time
 
@@ -63,7 +63,8 @@ def GetPopularArtists():
         topartists[artist['name']] = ''
     if topartists == {}:
         print 'Error 503, Yahoo Search API failed to return the requested information'
-    return topartists
+    else:
+        return topartists
 
 def GetLastFMURLS(artists):
     """ Takes list of artists, returns list of LastFM album api urls """
@@ -73,20 +74,15 @@ def GetLastFMURLS(artists):
     for artist in artists:
         albumurls.append('http://ws.audioscrobbler.com/2.0/?method=artist.gettopalbums&artist=' + artist.encode('utf-8', 'replace').replace(' ', '%20') + '&api_key=' + api_key)
     print 'Retrieved all album urls at ' + str(time())
-    print albumurls
     return albumurls
 
 def GetAlbums(artists):    
     urls = GetLastFMURLS(artists)
     """ HERE IS THE SCRIPT'S NETWORK CHOKE POINT """
-    print 'We\'re waiting 15 seconds for LastFM\'s response'
+    print 'We\'re waiting 10 seconds for LastFM\'s response'
     print 'because it is a lot of data and we have time.'
     print 'Time requirement for script is < 30 seconds.'
-    print 'If we don\'t wait it out, we will not always'
-    print 'get all of the information from their servers.'
-    print 'We probably only have to wait about 7-10 seconds,'
-    print 'but 15 is safe and we\'re well within the time limit.'
-    requests = multi_get(urls,timeout=15) # Threaded url requests
+    requests = multi_get(urls,timeout=10) # Threaded url requests
     print 'Retrieved all artist albums from LastFM'
     artistsalbums = {}
     for url, data in requests:
@@ -101,19 +97,21 @@ def GetAlbums(artists):
                 soup = BeautifulSoup(data)
                 
                 """ HERE IS THE SCRIPT'S DATA PROCESSING CHOKE POINT """
+                # I can speed all of this data processing up with multiprocessing, but it's already fast
+                
                 # Find all album medium sized image links
                 for link in soup.findAll(lambda tag: tag.name=='image' and tag.has_key('size') and str(tag['size']) == 'medium'):
-                    image_url = str(link)[21:-8] # cut image tags and attributes
+                    image_url = str(link)[21:-8] # slice off image tags and attributes
                     image_medium_links.append(image_url)
 
                 # Find all album names    
                 for name in soup.findAll('name')[::2]:
-                    album_name = str(name)[6:-7]  # slice cuts name tags
+                    album_name = str(name)[6:-7]  # slice off name tags
                     album_names.append(album_name)
         
                 # Find all album playcounts
                 for album in soup.findAll('playcount'):
-                    playcount = str(album)[11:-12] # cut playcount tags
+                    playcount = str(album)[11:-12] # slice off playcount tags
                     album_playcounts.append(playcount)
                     
                 # Now insert values from image_medium_links, album_names, and album_playcounts
@@ -126,7 +124,6 @@ def GetAlbums(artists):
     print json.dumps(artistsalbums, sort_keys=True, indent=4, separators=(',', ': '))
 
 # json will format roughly to:
-# [
 #   {
 #       "artist"
 #       "albums":
@@ -136,7 +133,6 @@ def GetAlbums(artists):
 #           "playcount": 'playcount'
 #       },
 #   }
-#]
 
 if __name__ == '__main__':
     start = time()
@@ -145,7 +141,7 @@ if __name__ == '__main__':
     topartists = {}
     topartists = GetPopularArtists()
     print 'Retrieved all popular artists at ' + str(time())
-    print topartists
+    # print topartists
     print 'Retrieving albums for all artists from LastFM at ' + str(time())
     GetAlbums(topartists)
     print 'Script began at ' + str(start)
