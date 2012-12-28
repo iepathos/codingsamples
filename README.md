@@ -9,4 +9,4 @@ Enthusiasm about open source, open data and open knowledge.  Results-driven self
 
 + [unfriend.py](https://github.com/iepathos/twitter-scripts/blob/master/unfriend.py) is a python script I wrote to unfollow people on Twitter who aren't following you back.
 
-+ [Responsive web design](http://www.wyomafilms.com/) is a portfolio site I created for video production company, Wyoma Films.  It is example of responsive web design.  The HTML and CSS, combined with bootstrap.js, adapt the layout from regular computer screens, to tablets, to smartphones.
++ [Responsive web design](http://www.wyomafilms.com/) is a portfolio site I created for video production company, Wyoma Films.  It is an example of responsive web design.  The HTML and CSS, combined with bootstrap.js, adapt the layout from regular computer screens, to tablets, to smartphones.
