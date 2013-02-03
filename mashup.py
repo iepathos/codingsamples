@@ -6,7 +6,11 @@
 # Then outputs all of the information in json format.
 # Information is a url to a medium-sized image for each album,
 # each album's name and each album's playcount.
+#
 # The whole script executes in less than 30 seconds.
+# It takes about 15 seconds to execute on an average
+# machine with an average Internet connection.
+#
 # This script was written in response to a coding challenge
 # issued by Saffron Digital for a python web development position.
 #
@@ -97,8 +101,6 @@ def GetAlbums(artists):
                 soup = BeautifulSoup(data)
                 
                 """ HERE IS THE SCRIPT'S DATA PROCESSING CHOKE POINT """
-                # I can speed all of this data processing up with multiprocessing, but it's already fast
-                
                 # Find all album medium sized image links
                 for link in soup.findAll(lambda tag: tag.name=='image' and tag.has_key('size') and str(tag['size']) == 'medium'):
                     image_url = str(link)[21:-8] # slice off image tags and attributes
@@ -117,7 +119,7 @@ def GetAlbums(artists):
                 # Now insert values from image_medium_links, album_names, and album_playcounts
                 # into artist_albums dictionary                   
                 for i in range(0, len(album_names)):
-                    albumslist[i] = {'image_medium': image_medium_links[i], 'name': album_names[i], 'playcount': album_playcounts[i]}
+                    albumslist[i+1] = {'image_medium': image_medium_links[i], 'name': album_names[i], 'playcount': album_playcounts[i]}
 
                 artistsalbums[artist.encode('utf-8', 'replace')] = albumslist
             
