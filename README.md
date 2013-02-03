@@ -11,7 +11,7 @@ Enthusiasm about open source, open data and open knowledge.  Results-driven self
 
 # Contributions to Open Source projects:
 + Updated the Openshift actions hooks for all of the master Django project templates.  I added a pre_build action hook to simplify the projects' installation and updated the Openshift environment variables. [DIY Python2.7 Django](https://github.com/ehazlett/openshift-diy-py27-django) [DIY GeoDjango](https://github.com/bixority/openshift-diy-geodjango) [DIY Django with uWSGI and Jenkins](https://github.com/ksurya/openshift-diy-py27-django-jenkins)
-+ [Mezzanine CMS templates for Django](https://github.com/renyi/mezzanine-themes)
++ [Updated Mezzanine CMS templates for Django](https://github.com/renyi/mezzanine-themes)
 + [Fixed typos in Django endless pagination](https://github.com/frankban/django-endless-pagination)
 + [Corrected Mark Oto's HTML and CSS Styling Guide](https://github.com/mdo/code-guide)
 + [Corrected Kenneth Reitz's Python Best Practices Guide](https://github.com/kennethreitz/python-guide )
