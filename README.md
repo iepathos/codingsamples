@@ -7,7 +7,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Django and SQL Database creation](https://github.com/iepathos/codingsamples/blob/master/populate.py) I created this script for a startup website I'm working on.  This script populates a SQL database with all of the categories from the National Taxonomy of Exempt Entities and all of the non-profit organizations in the US from the IRS pub78 release.
 
-+ [Guidestar Database Information Sync](https://github.com/iepathos/codingsamples/blob/master/guidestar.py) This script works with the database created from the previous script.  It updates the non-profit organizations in the database with information from the Guidestar database like organization zipcodes, mission statements, total annual revenue and total annual expenses.  It categorizes the organizations into primary, secondary and tertiary categories and sub-categories based on Guidestar.
++ [Guidestar Database Information Sync](https://github.com/iepathos/codingsamples/blob/master/guidestar.py) This script works with the database created from the previous script.  It updates the non-profit organizations in the database with information from the Guidestar database like organization mission statement, zipcode, total annual revenue and total annual expenses.  It categorizes the organizations into primary, secondary and tertiary categories and sub-categories based on Guidestar.
 
 + [Python coding puzzle](https://github.com/iepathos/codingsamples/blob/master/bestbefore.py) is a python script I wrote in response to a coding puzzle from Spotify.  The script reads an ambiguous date from a file and prints the earliest possible expiration date between the years 2000 and 3000.
 
