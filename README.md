@@ -13,7 +13,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 # Contributions to Open Source projects:
 + Fixed a couple errors by adding safety checks to [django-categories](https://github.com/callowayproject/django-categories)
-+ Fixed typos in [django-progressbarupload code comments and documentation](https://github.com/ouhouhsami/django-progressbarupload)
++ Fixed typos in [django-progressbarupload](https://github.com/ouhouhsami/django-progressbarupload) code comments and documentation
 + Updated the Openshift actions hooks for all of the master Django project templates.  I added a pre_build action hook to simplify the projects' installation and updated the Openshift environment variables. [DIY Python2.7 Django](https://github.com/ehazlett/openshift-diy-py27-django) [DIY GeoDjango](https://github.com/bixority/openshift-diy-geodjango) [DIY Django with uWSGI and Jenkins](https://github.com/ksurya/openshift-diy-py27-django-jenkins)
 + Updated [Mezzanine CMS templates for Django](https://github.com/renyi/mezzanine-themes)
 + Fixed typos in [Django endless-pagination](https://github.com/frankban/django-endless-pagination)
