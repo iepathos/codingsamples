@@ -9,6 +9,8 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Guidestar Database Information Sync](https://github.com/iepathos/codingsamples/blob/master/guidestar.py) This script works with the database created from the previous script.  It updates the non-profit organizations in the database with information from the Guidestar database like organization mission statement, zipcode, total annual revenue and total annual expenses.  It categorizes the organizations into primary, secondary and tertiary categories and sub-categories based on Guidestar.
 
++ [Python list comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
+
 + [Python coding puzzle](https://github.com/iepathos/codingsamples/blob/master/bestbefore.py) is a python script I wrote in response to a coding puzzle from Spotify.  The script reads an ambiguous date from a file and prints the earliest possible expiration date between the years 2000 and 3000.
 
 # Contributions to Open Source projects:
