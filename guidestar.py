@@ -293,7 +293,7 @@ def SoftSyncToGuidestar():
 	i = 0
 	for npo in Npo.objects.all():
 		if not npo.mission_statement:
-			"""
+            """
                 If Mission Statement doesn't exist, then the
                 Guidestar info has never been synced.
             """
