@@ -14,7 +14,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 + [Python coding puzzle](https://github.com/iepathos/codingsamples/blob/master/bestbefore.py) is a python script I wrote in response to a coding puzzle from Spotify.  The script reads an ambiguous date from a file and prints the earliest possible expiration date between the years 2000 and 3000.
 
 # Contributions to Open Source projects:
-+Fixed deprecation errors across [django-social-auth](https://github.com/omab/django-social-auth) and [django-tinymce](https://github.com/aljosa/django-tinymce)
++ Fixed deprecation errors across [django-social-auth](https://github.com/omab/django-social-auth) and [django-tinymce](https://github.com/aljosa/django-tinymce)
 + Fixed a couple errors by adding safety checks to [django-categories](https://github.com/callowayproject/django-categories)
 + Fixed typos in [django-progressbarupload](https://github.com/ouhouhsami/django-progressbarupload) code comments and documentation
 + Updated the Openshift actions hooks for all of the master Django project templates.  I added a pre_build action hook to simplify the projects' installation and updated the Openshift environment variables. [DIY Python2.7 Django](https://github.com/ehazlett/openshift-diy-py27-django) [DIY GeoDjango](https://github.com/bixority/openshift-diy-geodjango) [DIY Django with uWSGI and Jenkins](https://github.com/ksurya/openshift-diy-py27-django-jenkins)
