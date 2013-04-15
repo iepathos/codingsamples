@@ -1,6 +1,7 @@
-# Coding Samples
-## Web Developer and Technical Editor
-### Glen Baker - iepathos@gmail.com
+Coding Samples
+==============
+## Coder and Technical Editor
+#### Glen Baker - iepathos@gmail.com
 Enthusiasm about open source, open data and open knowledge.  Self-starter comfortable working independently and in a team environment.  Self-motivated with a passion for learning new and improved techniques.
 
 + [Python API coding](https://github.com/iepathos/codingsamples/blob/master/mashup.py) is a python script I wrote in response to a coding challenge from Saffron Digital.  The script finds all of the popular music artists through Yahoo search API, then finds all of the artists' albums through LastFM API.  It finds the album name, a medium-sized image link of the album cover and the play counts for each album.  Then it spits everything out in JSON format.  One of the requirements for the challenge was that the script execute in less than 30 seconds.  My script only takes about 10 seconds to execute.
@@ -14,6 +15,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 # Contributions to Open Source projects:
 + Created [django-mysql-example](https://github.com/iepathos/django-mysql-example) template for quickstart deployment of Django with MySQL on OpenShift.
 + Created [django-memcached-openshift](https://github.com/iepathos/django-memcached-openshift) template for quickstart deployment of Django with Memcached on OpenShift.
++ Added production environment safety check to the official [OpenShift Django quickstart template](https://github.com/openshift/django-example).  Fixed internal server error caused by the setup script installing the wrong version of Django.
 + Fixed a couple errors by adding safety checks to [django-categories](https://github.com/callowayproject/django-categories)
 + Fixed typos in [django-progressbarupload](https://github.com/ouhouhsami/django-progressbarupload) code comments and documentation
 + Updated the Openshift actions hooks for all of the master Django project templates.  I added a pre_build action hook to simplify the projects' installation and updated the Openshift environment variables. [DIY Python2.7 Django](https://github.com/ehazlett/openshift-diy-py27-django) [DIY GeoDjango](https://github.com/bixority/openshift-diy-geodjango) [DIY Django with uWSGI and Jenkins](https://github.com/ksurya/openshift-diy-py27-django-jenkins)
