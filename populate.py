@@ -13,6 +13,12 @@ from npo.models import Npo
 from categories.models import Category
 import sys
 
+import os
+# a setting to determine whether we are running on OpenShift
+ON_OPENSHIFT = False
+if os.environ.has_key('OPENSHIFT_REPO_DIR'):
+    ON_OPENSHIFT = True
+
 # Dictionary of valid US states by abbreviation
 states = {
     'AL': 'Alabama',
@@ -76,9 +82,11 @@ def NPOPopulateAll():
     # IRS Tax-Exempt NPO's list http://apps.irs.gov/app/eos/forwardToPub78Download.do
 
     # wget http://apps.irs.gov/pub/epostcard/data-download-pub78.zip
-
-    lines = open('irs-pub78.txt', 'r').readlines()
-    # Information in format: ein | name | city | state | - | United States |
+    if ON_OPENSHIFT:
+        lines = open(os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'npo', 'irs-pub78.txt'), 'r').readlines()
+    else:
+        lines = open('npo/irs-pub78.txt', 'r').readlines()
+        # Information in format: ein | name | city | state | - | United States |
 
     for line in lines:
         npodata = line.split('|')
@@ -101,8 +109,11 @@ def NPOPopulateByState(state):
     if state in states.keys():
         print 'Populating database with Non-Profit Organizations in the state of', states[state]
 
-        lines = open('irs-pub78.txt', 'r').readlines()
-        # Information in format: ein | name | city | state | - | United States |
+        if ON_OPENSHIFT:
+            lines = open(os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'npo', 'irs-pub78.txt'), 'r').readlines()
+        else:
+            lines = open('npo/irs-pub78.txt', 'r').readlines()
+            # Information in format: ein | name | city | state | - | United States |
 
         for line in lines:
             npodata = line.split('|')
@@ -117,13 +128,47 @@ def NPOPopulateByState(state):
     else:
         print 'Error, not a valid state abbreviation.'
 
+def NPOPopulateByCity(city, state):
+    """
+        Internal function to populate the database with NPO's by city.
+
+        Takes the name of the city and an state abbreviation, 
+        ex. 'CA', 'NY', 'WA'
+
+    """
+    city = str(city) # safety dance
+    state = str(state) # safety dance
+    print 'Populating database with Non-Profit Organizations in the city of', city + ',',  states[state]
+
+    if ON_OPENSHIFT:
+        lines = open(os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'npo', 'irs-pub78.txt'), 'r').readlines()
+    else:
+        lines = open('npo/irs-pub78.txt', 'r').readlines()
+        # Information in format: ein | name | city | state | - | United States |
+
+    for line in lines:
+        npodata = line.split('|')
+        if npodata[3] == state:
+            if npodata[2] == city:
+                try:
+                    npo = Npo.objects.get(ein=npodata[0])
+                    print 'Found NPO :', npo.name, 'skipping.'
+                except Npo.DoesNotExist:
+                    npo = Npo(ein=npodata[0], name=npodata[1], city=npodata[2], state=npodata[3], country=npodata[5])
+                    print 'Writing NPO :', npo.name, 'to database.'
+                    npo.save()
+                    
 def CategoryPopulate():
     """ 
         Internal Function to populate the database with the initial 
         Category information from the National Taxonomy of Tax Exempt
         Organizations (NTEE)
     """
-    lines = open('ntee-categories.txt', 'r').readlines()
+    if ON_OPENSHIFT:
+        lines = open(os.path.join(os.environ['OPENSHIFT_DATA_DIR'], 'npo', 'ntee-categories.txt'), 'r').readlines()
+    else:
+        lines = open('npo/ntee-categories.txt', 'r').readlines()
+
     for line in lines:
         if line != '':
             try:
@@ -134,7 +179,8 @@ def CategoryPopulate():
                 category = Category(name=line.strip(), meta_keywords=line.split()[0])
                 print 'Writing Category %s to database...' % line.strip()
             # NTEE Code set as first meta keyword for each category
-            category.meta_keywords = str(category.name).split()[0]
+            category.meta_keywords = category.name.split()[0]
+            category.alternate_title = category.name.split()[0]
             category.save()
 
             ### Assign Parent Categories

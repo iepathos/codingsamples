@@ -38,6 +38,7 @@ def CategorizeUnknown(category_str):
         except Category.DoesNotExist:
             try:
                 cat = Category(name=category_str, meta_keywords=category_str.split()[0])
+                cat.alternate_title = cat.name.split()[0]
                 cat.parent = Category.objects.get(meta_keywords=category_str.split()[0][0])
                 cat.save()
             except:
@@ -114,7 +115,7 @@ def Guidestar(npo):
     ### Mission Statement
     if soup.findAll(lambda tag: tag.name=='div' and tag.has_key('id') and str(tag['id'])=='mission') != []:
         mission_statement = soup.findAll(lambda tag: tag.name=='div' and tag.has_key('id') and str(tag['id'])=='mission')
-        cleaned_mission_statement = str(mission_statement[0])[119:-19].strip()
+        cleaned_mission_statement = str(mission_statement[0])[118:-13].strip()
         if npo.mission_statement and cleaned_mission_statement != 'This organization has not provided a mission statement.':
             if npo.mission_statement != cleaned_mission_statement:
                 print 'Found previous mission statement:', npo.mission_statement
@@ -243,14 +244,14 @@ def Guidestar(npo):
     if 'primary_org_type' in npoinfo:
         try:
             primary_category = Category.objects.get(meta_keywords=npoinfo['primary_org_type'].split()[0])
-            npo.category.add(primary_category)
+            npo.categories.add(primary_category)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['primary_org_type']
     if 'primary_org_subtype' in npoinfo:
         try:
             primary_category_subtype = Category.objects.get(meta_keywords=npoinfo['primary_org_subtype'].split()[0])
-            npo.category.add(primary_category_subtype)
+            npo.categories.add(primary_category_subtype)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['primary_org_subtype']
@@ -259,14 +260,14 @@ def Guidestar(npo):
     if 'secondary_org_type' in npoinfo:
         try:
             secondary_category = Category.objects.get(meta_keywords=npoinfo['secondary_org_type'].split()[0])
-            npo.category.add(secondary_category)
+            npo.categories.add(secondary_category)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['secondary_org_type']
     if 'secondary_org_subtype' in npoinfo:
         try:
             secondary_category_subtype = Category.objects.get(meta_keywords=npoinfo['secondary_org_subtype'].split()[0])
-            npo.category.add(secondary_category_subtype)
+            npo.categories.add(secondary_category_subtype)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['secondary_org_subtype']
@@ -275,14 +276,14 @@ def Guidestar(npo):
     if 'tertiary_org_type' in npoinfo:
         try:
             tertiary_category = Category.objects.get(meta_keywords=npoinfo['tertiary_org_type'].split()[0])
-            npo.category.add(tertiary_category)
+            npo.categories.add(tertiary_category)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['tertiary_org_type']
     if 'tertiary_org_subtype' in npoinfo:
         try:
             tertiary_category_subtype = Category.objects.get(meta_keywords=npoinfo['tertiary_org_subtype'].split()[0])
-            npo.category.add(tertiary_category_subtype)
+            npo.categories.add(tertiary_category_subtype)
             npo.save()
         except Category.DoesNotExist:
             print 'Error, category %s does not exist.' % npoinfo['tertiary_org_subtype']
@@ -290,23 +291,23 @@ def Guidestar(npo):
             print 'Created new category:', Category.objects.get(name=npoinfo['tertiary_org_subtype'])
 
 def SoftSyncToGuidestar():
-	i = 0
-	for npo in Npo.objects.all():
-		if not npo.mission_statement:
-            """
-                If Mission Statement doesn't exist, then the
-                Guidestar info has never been synced.
-            """
-			Guidestar(npo)
-			print npo.name, 'is now synced with the Guidestar database.'
-			i += 1
-			if i % 10 == 0:
-				# Wait a minute every 10 NPO syncs 
+    """
+        If Mission Statement doesn't exist, then the
+        Guidestar info has never been synced.
+    """
+    i = 0
+    for npo in Npo.objects.all():
+        if not npo.mission_statement:
+            Guidestar(npo)
+            print npo.name, 'is now synced with the Guidestar database.'
+            i += 1
+            if i % 10 == 0:
+                # Wait a minute every 10 NPO syncs 
                 # to keep from overloading Guidestar
-				print 'Waiting...'
-				time.sleep(60)
+                print 'Waiting...'
+                time.sleep(60)
         else:
-			print npo.name, 'has already been synced with the Guidestar database.'
+            print npo.name, 'has already been synced with the Guidestar database.'
 
 def HardSyncToGuidestar():
     i = 0
