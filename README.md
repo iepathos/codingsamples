@@ -6,13 +6,13 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Python API coding](https://github.com/iepathos/codingsamples/blob/master/mashup.py) is a python script I wrote in response to a coding challenge from Saffron Digital.  The script finds all of the popular music artists through Yahoo search API, then finds all of the artists' albums through LastFM API.  It finds the album name, a medium-sized image link of the album cover and the play counts for each album.  Then it spits everything out in JSON format.  One of the requirements for the challenge was that the script execute in less than 30 seconds.  My script only takes about 10 seconds to execute.
 
++ [Django Jewelry App](https://whois-iepathos.rhcloud.com/jewelry) written in response to Beachmint backend coding exam. [Models](https://github.com/iepathos/beachmint/blob/master/jewelry/models.py) [Views](https://github.com/iepathos/beachmint/blob/master/jewelry/views.py) [Templates](https://github.com/iepathos/beachmint/tree/master/templates/jewelry)
+
 + [Django and SQL Database creation](https://github.com/iepathos/codingsamples/blob/master/populate.py) I created this script for a startup website I'm working on.  This script populates a SQL database with all of the categories from the National Taxonomy of Exempt Entities and all of the non-profit organizations in the US from the IRS pub78 release.
 
 + [Guidestar Database Information Sync](https://github.com/iepathos/codingsamples/blob/master/guidestar.py) This script works with the database created from the previous script.  It updates the non-profit organizations in the database with information from the Guidestar database like organization mission statement, zipcode, total annual revenue and total annual expenses.  It categorizes the organizations into primary, secondary and tertiary categories and sub-categories based on Guidestar.  Additionally, if the script finds a new category on Guidestar, it will add the category to the database.
 
 + [Python List Comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
-
-+ [Django Jewelry App](https://whois-iepathos.rhcloud.com/jewelry) written in response to Beachmint backend coding exam. [Models](https://github.com/iepathos/beachmint/blob/master/jewelry/models.py) [Views](https://github.com/iepathos/beachmint/blob/master/jewelry/views.py) [Templates](https://github.com/iepathos/beachmint/tree/master/templates/jewelry)
 
 # Contributions to Open Source projects:
 + Added javascript to auto-focus on form fields [pinax/pinax-theme-bootstrap](https://github.com/pinax/pinax-theme-bootstrap)
