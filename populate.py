@@ -5,7 +5,8 @@
 
 """
     NPOPopulateAll()
-    NPOPopulateByState(US_state_abbreviation)
+    NPOPopulateByState(state_abbreviation)
+    NPOPopulateByCity(city, state_abbreviation)
     CategoryPopulate()
 
 """
