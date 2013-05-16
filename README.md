@@ -13,6 +13,8 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 + [Python list comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
 
 # Contributions to Open Source projects:
++ Added javascript to auto-focus on form fields [pinax/pinax-theme-bootstrap](https://github.com/pinax/pinax-theme-bootstrap)
++ Edited readme for [plupload](https://github.com/moxiecode/plupload)
 + Created [django-mysql-example](https://github.com/iepathos/django-mysql-example) template for quickstart deployment of Django with MySQL on OpenShift.
 + Created [django-memcached-openshift](https://github.com/iepathos/django-memcached-openshift) template for quickstart deployment of Django with Memcached on OpenShift.
 + Added production environment safety check to the official [OpenShift Django quickstart template](https://github.com/openshift/django-example).  Fixed internal server error caused by the setup script installing the wrong version of Django.
