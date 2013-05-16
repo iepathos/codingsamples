@@ -12,7 +12,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Python list comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
 
-+ [Jewelry Django App](https://whois-iepathos.rhcloud.com/jewelry) written in response to Beachmint technical exam. [Models](https://github.com/iepathos/beachmint/blob/master/jewelry/models.py) [Views](https://github.com/iepathos/beachmint/blob/master/jewelry/views.py) [Templates](https://github.com/iepathos/beachmint/tree/master/templates/jewelry)
++ [Django Jewelry App](https://whois-iepathos.rhcloud.com/jewelry) written in response to Beachmint backend coding exam. [Models](https://github.com/iepathos/beachmint/blob/master/jewelry/models.py) [Views](https://github.com/iepathos/beachmint/blob/master/jewelry/views.py) [Templates](https://github.com/iepathos/beachmint/tree/master/templates/jewelry)
 
 # Contributions to Open Source projects:
 + Added javascript to auto-focus on form fields [pinax/pinax-theme-bootstrap](https://github.com/pinax/pinax-theme-bootstrap)
