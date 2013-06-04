@@ -11,7 +11,7 @@
 # It takes about 15 seconds to execute on an average
 # machine with an average Internet connection.
 #
-# This script was written in response to a coding challenge
+# This script was written in response to a coding assignment
 # issued by Saffron Digital for a python web development position.
 #
 # Script written by Glen Baker - iepathos@gmail.com
