@@ -18,7 +18,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 + [Wyoma Films](http://www.wyomafilms.com/)
 	This is a portfolio site for a video production startup based in Los Angeles, CA.  I built and re-built this site multiple times, usually coinciding with new video releases for the company.  It's currently built with Django 1.5, PostgreSQL on the backend and jQuery and Bootstrap on the front.
 
-+ [RimeNow](http://rime.webfactional.com/)
++ [RimeNow](http://www.rimenow.com/)
 	I performed dev-ops on this website, transfering it to webfactional and setting up the new server.  I had to go in and fix some old Python-Twitter API code as well in order to get the site operational.  The site is built with Django and MySQL on the backend.
 
 # Contributions to Open Source projects:
