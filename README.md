@@ -14,7 +14,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Python List Comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
 
-# Websites I Have Worked With
+# Websites I Have Worked On
 + [Wyoma Films](http://www.wyomafilms.com/)
 	This is a portfolio site for a video production startup based in Los Angeles, CA.  I built and re-built this site multiple times, usually coinciding with new video releases for the company.  It's currently built with Django 1.5, PostgreSQL on the backend and jQuery and Bootstrap on the front.
 
