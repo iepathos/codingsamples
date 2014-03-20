@@ -1,6 +1,6 @@
 Coding Samples
 ==============
-## Python Web Developer and Technical Editor
+## Python Web Developer and Dev Ops Engineer
 #### Glen Baker - iepathos@gmail.com
 Enthusiasm about open source, open data and open knowledge.  Self-starter comfortable working independently and in a team environment.  Self-motivated with a passion for learning new and improved techniques.
 
