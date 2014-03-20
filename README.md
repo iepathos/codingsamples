@@ -15,7 +15,13 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 + [Python List Comprehension](https://github.com/iepathos/codingsamples/blob/master/convertro.py) is a python script written in response to an online interview question asked by Convertro for a developer position.  The function of the script is a basic parse and sort.  The interesting part for me was the restriction to using only list comprehension to accomplish the task.
 
 # Websites I Have Worked On
-+ [Wyoma Films](http://www.wyomafilms.com/)
++ [GiraffL.com](http://www.giraffl.com/)
+	I built GiraffL.com for EDN-Systems.  GiraffL is a raffling website where a lot of the proceeds are donated to charities.  I built GiraffL with Django 1.6.1 and PostgreSQL.  I used Amazon S3 with CORS for image uploads and stripe to handle credit card payments.  I optimized GiraffL to perform under high traffic.
+
++ [Brnable.com](https://www.brnable.com/)
+	I built brnable.com mostly with Flask.  It's a private messaging service.  It lets you send private messages with built-in self-destruct options over any online network.  Brnable allows you to share messages with friends over Facebook without Facebook's servers ever knowing what the messages actually are. 
+
++ [Wyoma Films](http://glacial-castle-6814.herokuapp.com/)
 	This is a portfolio site for a video production startup based in Los Angeles, CA.  I built and re-built this site multiple times, usually coinciding with new video releases for the company.  It's currently built with Django 1.5, PostgreSQL on the backend and jQuery and Bootstrap on the front.
 
 + [RimeNow](http://www.rimenow.com/)
