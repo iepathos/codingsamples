@@ -6,7 +6,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 
 + [Bitcoin Arbitrage](https://github.com/iepathos/arbiter) is an arbitrage program I wrote in response to a coding puzzle issued by priceonomics.com.  The program retrieves the current rates through priceonomics API and then determines the best possible arbitrage opportunity in the data set.  A directed graph of the data is created.  Arbiter uses the Bellman Ford algorithm over the negative log of the product of the edge weights along the di-graph to find negative weight cycles. Permutations of possible arbitrage cycles containing the edge with a negative weight cycle are compared and the most profitable is returned.
 
-+ [Matrix Spiral](https://github.com/iepathos/codingsamples/blob/master/matrix.py) Takes a string of spaced numbers and the number of columns that make up a matrix.  Creates a 2d matrix and can print out the order of thje numbers in the matrix in spiral order going clockwise.
++ [Matrix Spiral](https://github.com/iepathos/codingsamples/blob/master/matrix.py) Takes a string of spaced numbers and the number of columns that make up a matrix.  Creates a 2d matrix and can print out the numbers in the matrix in spiral order going clockwise.  Created and improved upon as part of a coding test from plug.dj.
 
 + [Django and SQL Database creation](https://github.com/iepathos/codingsamples/blob/master/populate.py) I created this script for a startup website I'm working on.  This script populates a SQL database with all of the categories from the National Taxonomy of Exempt Entities and all of the non-profit organizations in the US from the IRS pub78 release.
 
