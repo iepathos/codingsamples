@@ -45,7 +45,7 @@ class Matrix(object):
 		self.spiral = self.spiral()
 
 	def spiral(self):
-		"""Print out matrix in spiral order, clockwise."""
+		"""Returns a string of the matrix in spiral order, clockwise."""
 		spiral_order = ''
 		top_row = 0 # current top row index
 		left_column = 0 # current first column index
