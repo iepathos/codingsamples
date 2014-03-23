@@ -16,7 +16,7 @@
 
 class Matrix(object):
 	"""
-		Matrix objects is built given a string of spaced numbers.
+		Matrix objects is built given a string of spaced numbers and the number of columns.
 	"""
 	numbers = []
 	matrix = []
@@ -30,7 +30,7 @@ class Matrix(object):
 		self.columns = int(columns)
 		self.rows = len(self.numbers)/self.columns
 
-		matrix = [[0 for x in xrange(self.columns)] for x in xrange(self.columns)]
+		matrix = [[0 for x in xrange(self.columns)] for x in xrange(self.rows)]
 		# put the numbers to the matrix
 		k = 0
 		for i in range(self.rows):
