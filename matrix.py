@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """	
+	Creates a 2d matrix that can print out in spiral order.
+	Created as a response to a coding test.
+
+	Written by Glen Baker - iepathos@gmail.com
 
 	Example usage from a Python shell:
 	>>> from matrix import Matrix
