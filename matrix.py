@@ -19,9 +19,7 @@
 """
 
 class Matrix(object):
-	"""
-		Matrix objects is built given a string of spaced numbers and the number of columns.
-	"""
+	"""Matrix object is built given a string of spaced numbers and the number of columns."""
 	numbers = []
 	matrix = []
 	rows = 0 # total number of rows
