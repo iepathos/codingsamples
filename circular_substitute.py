@@ -13,10 +13,11 @@ def circular_substitute(string_s, shift_n):
 		else:
 			alphabet_index = alphabet.index(letter)
 			if alphabet_index + shift_n > len(alphabet):
-				results += alphabet[(alphabet_index+shift_n)- len(alphabet)]
+				shift_loops = (alphabet_index+shift_n) / len(alphabet)
+				results += alphabet[(alphabet_index+shift_n) - (len(alphabet)*shift_loops)]
 			else:
 				results += alphabet[alphabet_index+shift_n]
 	return results
 
 example_string = 'some fancy test stringz'
-print circular_substitute(example_string, 5)
+print circular_substitute(example_string, 202)
