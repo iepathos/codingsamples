@@ -20,7 +20,7 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 + [GiraffL](http://www.giraffl.com/)
 	I built GiraffL.com for EDN-Systems.  GiraffL is a raffling website where a lot of the proceeds are donated to charities.  I built GiraffL with Django 1.6.1 and PostgreSQL.  I used Amazon S3 with CORS for image uploads and stripe to handle credit card payments.  I optimized GiraffL to perform under high traffic.
 
-+ [Brnable](https://www.brnable.com/)
++ [Brnable](http://www.brnable.com/)
 	I built brnable.com mostly with Flask.  It's a private messaging service.  It lets you send private messages with built-in self-destruct options over any online network.  Brnable allows you to share messages with friends over Facebook without Facebook's servers ever knowing what the messages actually are. 
 
 + [Wyoma Films](http://glacial-castle-6814.herokuapp.com/)
