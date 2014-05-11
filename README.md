@@ -21,9 +21,9 @@ Enthusiasm about open source, open data and open knowledge.  Self-starter comfor
 	I built GiraffL.com for EDN-Systems.  GiraffL is a raffling website where a lot of the proceeds are donated to charities.  I built GiraffL with Django 1.6.1 and PostgreSQL.  I used Amazon S3 with CORS for image uploads and stripe to handle credit card payments.  I optimized GiraffL to perform under high traffic.
 
 + [Brnable](http://www.brnable.com/)
-	I built brnable.com mostly with Flask.  It's a private messaging service.  It lets you send private messages with built-in self-destruct options over any online network.  Brnable allows you to share messages with friends over Facebook without Facebook's servers ever knowing what the messages actually are. 
+	Brnable is a privacy proxy for sharing content online.  I built brnable with Flask and Nginx on the backend and Bootstrap3 on the frontend. 
 
-+ [Wyoma Films](http://glacial-castle-6814.herokuapp.com/)
++ [Wyoma Films](http://www.wyomafilms.com/)
 	This is a portfolio site for a video production startup based in Los Angeles, CA.  I built and re-built this site multiple times, usually coinciding with new video releases for the company.  I built it with Django 1.5, PostgreSQL on the backend and jQuery and Bootstrap on the front.
 
 + [Rime Now](http://www.rimenow.com/)
